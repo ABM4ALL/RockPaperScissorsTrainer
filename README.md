@@ -1,3 +1,5 @@
 # README
 
-This CovidContagion model is the example explained in the [tutorial](https://abm4all.github.io/Melodie/html/tutorial.html) of the Melodie package. 
+This CovidGridContagion model is built on top of the 
+[CovidContagion](https://github.com/ABM4ALL/CovidContagion) 
+model to show how the ``Trainer`` module of **Melodie** can be implemented.
