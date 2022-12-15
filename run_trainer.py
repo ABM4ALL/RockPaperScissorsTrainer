@@ -11,6 +11,6 @@ if __name__ == "__main__":
         scenario_cls=RPSScenario,
         model_cls=RPSModel,
         data_loader_cls=RPSDataLoader,
-        # processors=4
+        processors=4
     )
     trainer.run()

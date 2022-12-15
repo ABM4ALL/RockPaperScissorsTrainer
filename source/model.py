@@ -29,6 +29,7 @@ class RPSModel(Model):
         for period in range(0, self.scenario.period_num):
             self.environment.agents_setup_data(self.agents)
             self.environment.run_game_rounds(self.agents)
+            self.environment.agents_calc_action_share(period, self.agents)
             self.data_collector.collect(period)
         self.data_collector.save()
 

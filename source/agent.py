@@ -29,6 +29,12 @@ class RPSAgent(Agent):
         self.result: str = ""
         self.payoff: float = 0.0
         self.accumulated_payoff: float = 0.0
+        self.n_rock: int = 0
+        self.n_paper: int = 0
+        self.n_scissors: int = 0
+        self.share_rock: float = 0
+        self.share_paper: float = 0
+        self.share_scissors: float = 0
 
     def setup_action_prob(self):
         if self.strategy_param_1 == self.strategy_param_2 == self.strategy_param_3 == 0:
@@ -57,15 +63,22 @@ class RPSAgent(Agent):
         rand = random.uniform(0, 1)
         if rand <= self.action_prob["rock"]:
             self.action = "rock"
+            self.n_rock += 1
         elif self.action_prob["rock"] < rand <= self.action_prob["rock"] + self.action_prob["paper"]:
             self.action = "paper"
+            self.n_paper += 1
         else:
             self.action = "scissors"
+            self.n_scissors += 1
 
     def set_action_payoff(self):
         self.payoff = self.action_payoff[(self.action, self.result)]
         self.accumulated_payoff += self.payoff
 
+    def calc_action_percentage(self):
+        self.share_rock = self.n_rock / self.scenario.period_num
+        self.share_paper = self.n_paper / self.scenario.period_num
+        self.share_scissors = self.n_scissors / self.scenario.period_num
 
 
 

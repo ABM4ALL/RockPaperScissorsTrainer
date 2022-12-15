@@ -53,7 +53,10 @@ class RPSEnvironment(Environment):
         self.total_accumulated_payoff += agent_1.payoff
         self.total_accumulated_payoff += agent_2.payoff
 
-
+    def agents_calc_action_share(self, period, agents: "AgentList[RPSAgent]"):
+        if period == self.scenario.period_num - 1:
+            for agent in agents:
+                agent.calc_action_percentage()
 
 
 

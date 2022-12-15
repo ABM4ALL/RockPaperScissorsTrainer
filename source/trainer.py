@@ -19,6 +19,9 @@ class RPSTrainer(Trainer):
         self.add_agent_property("agents", "strategy_param_1")
         self.add_agent_property("agents", "strategy_param_2")
         self.add_agent_property("agents", "strategy_param_3")
+        self.add_agent_property("agents", "share_rock")
+        self.add_agent_property("agents", "share_paper")
+        self.add_agent_property("agents", "share_scissors")
         self.add_environment_property("total_accumulated_payoff")
 
     def utility(self, agent: RPSAgent):
