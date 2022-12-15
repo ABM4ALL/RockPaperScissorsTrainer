@@ -44,7 +44,7 @@ class RPSAnalyzer:
             y_limit=(0, 0.5)
         )
 
-    def plot_paths(self, paths: Dict[str, np.ndarray], fig_name: str, y_label: str = None,  y_limit: tuple = None):
+    def plot_paths(self, paths: Dict[str, np.ndarray], fig_name: str, y_label: str = None, y_limit: tuple = None):
         figure = plt.figure(figsize=(12, 6))
         ax = figure.add_axes((0.1, 0.1, 0.8, 0.8))
         if y_limit:
