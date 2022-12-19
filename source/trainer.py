@@ -6,13 +6,13 @@ class RPSTrainer(Trainer):
 
     def setup(self):
         self.add_agent_training_property(
-            container_name="agents",  # agent_list_name
-            used_properties=[  # training_attributes
+            "agents",
+            [
                 "strategy_param_1",
                 "strategy_param_2",
                 "strategy_param_3"
             ],
-            agent_ids=lambda scenario: list(range(scenario.agent_num)),  # necessary?
+            lambda scenario: list(range(scenario.agent_num)),
         )
 
     def collect_data(self):
