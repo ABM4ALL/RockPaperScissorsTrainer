@@ -21,7 +21,7 @@ class RPSAnalyzer:
     ):
         trainer_params_scenarios = self.db.read_dataframe("trainer_params_scenarios")
         path_num = trainer_params_scenarios.at[id_trainer_scenario, "path_num"]
-        df = self.db.read_dataframe("env_trainer_result_cov")
+        df = self.db.read_dataframe("environment_trainer_result_cov")
         df = df.loc[(df["id_trainer_scenario"] == id_trainer_scenario) &
                     (df["id_trainer_params_scenario"] == id_trainer_params_scenario)]
         payoff_paths = {}
